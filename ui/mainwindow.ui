@@ -94,7 +94,18 @@
                       </widget>
                      </item>
                      <item>
-                      <widget class="QComboBox" name="comboBox"/>
+                      <widget class="QRadioButton" name="radioButton_2">
+                       <property name="text">
+                        <string>GPU</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QRadioButton" name="radioButton">
+                       <property name="text">
+                        <string>CPU</string>
+                       </property>
+                      </widget>
                      </item>
                     </layout>
                    </widget>
