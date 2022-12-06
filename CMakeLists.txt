@@ -15,6 +15,8 @@ set(CMAKE_AUTOUIC_SEARCH_PATHS ui)
 find_package(QT NAMES Qt6 Qt5 COMPONENTS Widgets REQUIRED)
 find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Widgets REQUIRED)
 find_package(Qt${QT_VERSION_MAJOR}  COMPONENTS PrintSupport REQUIRED)
+find_package(Qt${QT_VERSION_MAJOR}  COMPONENTS Core REQUIRED)
+find_package(Qt${QT_VERSION_MAJOR}  REQUIRED COMPONENTS Gui)
 
 
 set(SOURCES
@@ -22,12 +24,14 @@ set(SOURCES
         src/mainwindow.cpp
         ui/mainwindow.ui
         src/qcustomplot.cpp
+        src/MonteCarlo.cpp
         
 )
 
 set(HEADERS
 	inc/qcustomplot.h
 	inc/mainwindow.h
+	inc/MonteCarlo.hpp
 )
 
 set(UIS
@@ -41,4 +45,5 @@ add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS} ${UIS})
 
 target_link_libraries(MonteCarlo PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
 target_link_libraries(MonteCarlo PRIVATE Qt${QT_VERSION_MAJOR}::PrintSupport)
-
+target_link_libraries(MonteCarlo PRIVATE Qt${QT_VERSION_MAJOR}::Core)
+target_link_libraries(MonteCarlo PRIVATE Qt${QT_VERSION_MAJOR}::Gui)
